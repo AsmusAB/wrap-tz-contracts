@@ -69,8 +69,8 @@ let fail_if_paused_tokens (transfers, paused : transfer list * paused_tokens_set
 
 let fail_if_paused (a, param : token_admin_storage * fa2_entry_points) : unit =
   match param with
-  | Balance_of -> unit
-  | Update_operators -> unit
+  | Balance_of _ -> unit
+  | Update_operators _ -> unit
   | Transfer transfers -> fail_if_paused_tokens(transfers, a.paused)
 
 
